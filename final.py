@@ -7,17 +7,14 @@ from textblob import Blobber
 tb = Blobber(analyzer=NaiveBayesAnalyzer())
 import pandas as pd
 import os
+import constants
 
 ##Test###
 
 YOUR_UNIQNAME = 'mithils'  # Fill in your uniqname
 DB_PATH = "si330-final-project.db".format(YOUR_UNIQNAME)
 
-# Unique code from Twitter
-access_token = "791818305707335681-dclJMCNmxy8o2AewAYF151lezepQVsR"
-access_token_secret = "JqIAWuCOKdw5b3FMzOkWzY2A07BAbNBonuyFATrMIH8UQ"
-consumer_key = "3NuHlgUd7V6bh4luLzufApZyd"
-consumer_secret = "mne0VBThE0LhQILiTaMH4mdK8LMxW0ChVhEUEZQdE23ZYFGob9"
+
 
 # Boilerplate code here
 auth = tweepy.AppAuthHandler(consumer_key, consumer_secret)
