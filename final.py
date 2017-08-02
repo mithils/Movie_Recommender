@@ -7,7 +7,7 @@ from textblob import Blobber
 tb = Blobber(analyzer=NaiveBayesAnalyzer())
 import pandas as pd
 import os
-import constants
+from constants import consumer_key,consumer_secret,access_token,access_token_secret
 
 ##Test###
 
@@ -53,6 +53,7 @@ def get_top_movies():
 # Input: None
 # This function creates the db table used later for sql queries
 def create_db_table():
+
     with sqlite.connect(DB_PATH) as conn:
         cur = conn.cursor()
         cur.execute("DROP TABLE IF EXISTS  movie")
@@ -68,6 +69,7 @@ def sql_query():
         for idx, col in enumerate(cursor.description):
             d[col[0]] = row[idx]
         return d
+    create_db_table()
     with sqlite.connect(DB_PATH) as conn:
         conn.row_factory = dict_factory
         cur = conn.cursor()
