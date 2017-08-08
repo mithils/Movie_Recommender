@@ -156,6 +156,7 @@ def tweet_analysis(filename):
 # well as os.path.exists to check if files already exist.
 # Output: ratings_dict(dictionary) key: filename, value: Twitter Movie Rating
 
+
 def compile_ratings():
     movie_data = sql_query()
     ratings_dict = {}
